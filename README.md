@@ -134,6 +134,24 @@ adb shell pm list packages
 卸载：adb shell pm uninstall --user 0 包名
 ```
 
+### 一些禁用
+
+需要管理员权限
+
+```bash
+pm enable com.ophone.reader.ui
+pm enable com.amazon.device.software.ota
+pm disable com.amazon.client.metrics
+pm disable com.amazon.kindle
+
+# 活动
+pm disable com.ophone.reader.ui/com.sina.weibo.sdk.share.WbShareToStoryActivity
+pm disable com.ophone.reader.ui/com.sina.weibo.sdk.share.WbShareTransActivity
+pm disable com.ophone.reader.ui/com.cmread.bplusc.login.activity.OOBELoginWelcomeActivity
+pm disable com.ophone.reader.ui/com.cmread.bplusc.reader.ProductChargeActivity
+
+```
+
 ### SSH
 
 adb没有root权限，但是可以安装dropbear以远程ssh，那么就有了root权限，无密码
